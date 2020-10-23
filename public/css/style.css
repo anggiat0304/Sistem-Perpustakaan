@@ -1,0 +1,8 @@
+body{
+    background-image: url('../image/background.jpg');
+    background-position: fixed;
+}
+.login{
+    background-color: aliceblue;
+    padding: 10px;
+}
