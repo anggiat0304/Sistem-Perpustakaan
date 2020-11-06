@@ -1,30 +1,38 @@
-@extends('layout.main')
-@section('title','edit data buku')
+@extends('layout/main')
+@section('title','Tambah User')
 @section('container')
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="w3-card">
-                <h1>Ubah data buku</h1>
-                <form method="POST" class="form" action="/login/administrator/updateBookProccess/{{$book->id}}">
-                 @csrf
+    <div class="row">
+        <div  class="col-md-5 w3-card form">
+        <h2>Tambah User </h2>
+            <form method="POST" action="/login/administrator/addUserProccess">
+            @csrf
                 <div class="form-group">
-                <label for="barcode">TAG ID</label>
-                <input type="text" class="form-control" value="{{$book->tag_id}}" name="barcode">
+                <label for="barcode">TAG ID </label>
+                <input type="text" class="form-control" placeholder="Masukkan tag id" name="tag_id">
                 </div>
                 <div class="form-group">
-                <label for="judul">Judul Buku</label>
-                <input type="text" class="form-control" value="{{$book->judul_buku}}" name="judul">
-                </div>
+                <label for="judul">NAMA</label>
+                <input type="text" class="form-control" placeholder="Masukkan nama" name="nama">
+                </div>  
                 <div class="form-group">
-                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                <label for="judul">NIP / NIM</label>
+                <input type="text" class="form-control" placeholder="Masukkan NIP atau NIM" name="NIM">
+                </div>  
+                <div class="form-group">
+                <label for="judul">STATUS</label>
+                <input type="text" class="form-control" placeholder="Masukkan status" name="status">
+                </div>  
+                <div class="form-group">
+                <label for="judul">EMAIL</label>
+                <input type="text" class="form-control" placeholder="Masukkan email" name="email">
+                </div>  
+                <div class="form-group">
+                <button type="submit" class="btn btn-success">Tambah</button>
                 </div>
-                </form>
-             </div>
-            </div>
-
-        <div class="col-md-1">
+            </form>
         </div>
+       
       <div class="col-md-6" style="padding:20px;">
             <div class="row" style="margin-bottom:20px;">
             <a href="/login/administrator/pengembalian" class="w3-card col-md-6 text-center icon">
@@ -48,6 +56,6 @@
             </div>
        </div>        
 
-        </div>
+     </div>
     </div>
 @endsection

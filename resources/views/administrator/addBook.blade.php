@@ -1,31 +1,27 @@
-@extends('layout.main')
-@section('title','edit data buku')
+@extends('layout/main')
+@section('title','Tambah Buku Perpustakaan')
 @section('container')
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="w3-card">
-                <h1>Ubah data buku</h1>
-                <form method="POST" class="form" action="/login/administrator/updateBookProccess/{{$book->id}}">
-                 @csrf
+     <div class="row">
+        <div  class="col-md-4 w3-card form">
+        <h2>Tambah Buku Perpustakaan</h2>
+            <form method="POST" action="/login/administrator/addBookProccess">
+            @csrf
                 <div class="form-group">
-                <label for="barcode">TAG ID</label>
-                <input type="text" class="form-control" value="{{$book->tag_id}}" name="barcode">
+                <label for="barcode">TAG ID </label>
+                <input type="text" class="form-control" placeholder="Masukkan tag id" name="barcode">
                 </div>
                 <div class="form-group">
                 <label for="judul">Judul Buku</label>
-                <input type="text" class="form-control" value="{{$book->judul_buku}}" name="judul">
-                </div>
+                <input type="text" class="form-control" placeholder="Masukkan judul" name="judul">
+                </div>  
                 <div class="form-group">
-                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                <button type="submit" class="btn btn-success">Tambah</button>
                 </div>
-                </form>
-             </div>
-            </div>
-
-        <div class="col-md-1">
+            </form>
         </div>
-      <div class="col-md-6" style="padding:20px;">
+
+        <div class="col-md-6" style="padding:20px;">
             <div class="row" style="margin-bottom:20px;">
             <a href="/login/administrator/pengembalian" class="w3-card col-md-6 text-center icon">
                 <img src="/images/return.png" width="100">
@@ -46,8 +42,7 @@
                 <h1 class="te">Daftar Peminjaman </h1>            
             </a>
             </div>
-       </div>        
-
-        </div>
+       </div>   
+     </div>
     </div>
 @endsection

@@ -16,5 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','PagesController@index');
 Route::get('/cek/{keyword}','LoginController@cek');
 Route::get('/login/{keyword}','LoginController@login');
-Route::get('administrator/home','BooksController@index');
+
+Route::post('/login/administrator/addBookProccess','BooksController@store');
+Route::get('/login/administrator/daftarbuku','BooksController@index');
+Route::get('/login/administrator/addBook','BooksController@create');
+Route::get('/login/administrator/deleteBook/{book}','BooksController@destroy');
+Route::get('/login/administrator/detailBook/{book}','BooksController@show');
+Route::get('/login/administrator/detailBook/editBook/{book}','BooksController@edit');
+
+Route::get('/login/administrator/peminjaman','PeminjamanController@index');
+Route::get('/login/administrator/detailBook/bookBorrower/{book}','PeminjamanController@show');
+Route::post('/login/administrator/updateBookProccess/{book}','BooksController@update');
+
+
+Route::get('/login/administrator/user','UserController@index');
+ n/R/oute::get('/login/administrator/addUser','UserController@create');
+Route::ge6t('/login/administrator/deleteUser/{user}','UserController@destroy');
+Route::get('/login/administrator/detailUser/{user}','UserController@show');
+Route::get('/login/administrator/detailUser/editUser/{user}','UserController@edit');
+Route::post('/login/administrator/updateUserProccess/{user}','UserController@update');
+
+Route::post('/login/administrator/addUserProccess','UserController@store');
 

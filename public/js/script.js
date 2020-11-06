@@ -7,7 +7,7 @@ window.onload = function () {
                 window.location = 'login/'+xhr.responseText;
                }
            }
-           xhr.open('GET','cek/{{'+keyword.value+ '}}',true);
+           xhr.open('GET','cek/{{'+keyword.value+'}}',true);
            xhr.send();
     });
 }

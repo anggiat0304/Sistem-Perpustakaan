@@ -1,27 +1,25 @@
 @extends('layout.main')
-@section('title','edit data buku')
+@section('title','Detail Buku')
 @section('container')
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="w3-card">
-                <h1>Ubah data buku</h1>
-                <form method="POST" class="form" action="/login/administrator/updateBookProccess/{{$book->id}}">
-                 @csrf
+        <div class="w3-card col-md-4">
+        <div class="form">
+        <h1>Detail Buku</h1>
                 <div class="form-group">
                 <label for="barcode">TAG ID</label>
-                <input type="text" class="form-control" value="{{$book->tag_id}}" name="barcode">
+                <input type="text" class="form-control" value="{{$book->tag_id}}" readonly>
                 </div>
                 <div class="form-group">
                 <label for="judul">Judul Buku</label>
-                <input type="text" class="form-control" value="{{$book->judul_buku}}" name="judul">
+                <input type="text" class="form-control" value="{{$book->judul_buku}}" readonly>
                 </div>
                 <div class="form-group">
-                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                   <a href="editBook/{{$book->id}}"><button type="submit" class="btn btn-success">Edit</button></a>
+                   <a href="bookBorrower/{{$book->id}}"><button type="submit" class="btn btn-dark">Riwayat Peminjaman Buku</button></a>
                 </div>
-                </form>
-             </div>
             </div>
+        </div>
 
         <div class="col-md-1">
         </div>

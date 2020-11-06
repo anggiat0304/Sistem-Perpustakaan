@@ -5,7 +5,7 @@
         <fieldset class="login">
             <form id="login" method="post">
                 <div class="form-group">
-                <label for="nim">SILAHKAN LOGIN</label>
+                <label for="nim"><b>LOGIN</b></label>
                 <input type="text" class="form-control" placeholder="Enter barcode" id="search">
                 </div>
             </form>

@@ -16,8 +16,8 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="/" style="font-family: Engravers MT;">Perpustakaan IT DEL</a>
+<nav class="navbar navbar-expand-lg nav">
+<a class="navbar-brand white" href="/">Perpustakaan</a>
 </nav>
 </header>
 @yield('container')

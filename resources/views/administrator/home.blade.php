@@ -1,25 +1,33 @@
 @extends('layout/main')
 @section('title','homeadministrator')
 @section('container')
-    <div class='container text-center'>
-        <div class='row' style="margin-top: 20px;">
-            <div class="col-md-6">
-             <a href="administrator/daftarbuku"><button class="btn btn-primary w3-hover-white" style="padding:50px; width:100%">
-                    DAFTAR BUKU
-                </button></a>
+    <div class='container  text-center'>
+    <div class="row">
+    <div class="col-md-3">
+    </div>
+      <div class="col-md-6" style="padding:20px;">
+            <div class="row" style="margin-bottom:20px;">
+            <a href="/login/administrator/pengembalian" class="w3-card col-md-6 text-center icon">
+                <img src="/images/return.png" width="100">
+                <h1 class="te">Pengembalian</h1>            
+            </a>
+            <a href="/login/administrator/daftarbuku" class="w3-card col-md-6 text-center icon">
+                <img src="/images/book.png" width="100">
+                <h1 class="te">Daftar Buku</h1>            
+            </a>
             </div>
-            <div class="col-md-6">
-             <a href="administrator/daftarbuku"><button class="btn w3-purple w3-hover-white" style="padding:50px; width:100%">
-                    TAMBAH PESERTA PERPUSTAKAAN
-                </button></a>
+            <div class="row">
+            <a href="/login/administrator/user" class="w3-card col-md-6 text-center icon">
+                <img src="/images/participant.png" width="100">
+                <h1 class="te">Pengguna</h1>            
+            </a>
+            <a href="/login/administrator/peminjaman" class="w3-card col-md-6 text-center icon">
+                <img src="/images/list.png" width="100">
+                <h1 class="te">Daftar Peminjaman </h1>            
+            </a>
             </div>
-        </div>
-        <div class='row' style="margin-top: 20px;">
-        <div class="col-md-12">
-             <a href="administrator/listpeminjaman"><button class="btn w3-khaki w3-hover-white" style="padding:50px; width:100%">
-                    DAFTAR PEMINJAMAN BUKU
-                </button></a>
-            </div>
-        </div>
+       </div>        
+    
+    </div>
     </div>
 @endsection

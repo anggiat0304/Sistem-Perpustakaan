@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class book extends Model
 {
     //
-    public function participant()
+    protected $table = "buku";
+    public function pengguna()
     {
-        return $this->belongToMany('App\participant');
+        return $this->belongsToMany('App\user');
     }
 }

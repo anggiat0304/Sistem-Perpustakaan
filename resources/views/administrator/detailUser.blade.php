@@ -1,28 +1,37 @@
 @extends('layout.main')
-@section('title','edit data buku')
+@section('title','Detail User')
 @section('container')
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="w3-card">
-                <h1>Ubah data buku</h1>
-                <form method="POST" class="form" action="/login/administrator/updateBookProccess/{{$book->id}}">
-                 @csrf
+    <div class="row">
+      <div class="w3-card col-md-4">
+        <div class="form">
+        <h1>Detail User</h1>
                 <div class="form-group">
                 <label for="barcode">TAG ID</label>
-                <input type="text" class="form-control" value="{{$book->tag_id}}" name="barcode">
+                <input type="text" class="form-control" value="{{$user->tag_id}}" readonly>
                 </div>
                 <div class="form-group">
-                <label for="judul">Judul Buku</label>
-                <input type="text" class="form-control" value="{{$book->judul_buku}}" name="judul">
+                <label for="judul">Nama</label>
+                <input type="text" class="form-control" value="{{$user->nama}}" readonly>
                 </div>
                 <div class="form-group">
-                <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                <label for="judul">NIM / NIM</label>
+                <input type="text" class="form-control" value="{{$user->no_id}}" readonly>
                 </div>
-                </form>
-             </div>
+                <div class="form-group">
+                <label for="judul">Status</label>
+                <input type="text" class="form-control" value="{{$user->posisi}}" readonly>
+                </div>
+                <div class="form-group">
+                <label for="judul">Email</label>
+                <input type="text" class="form-control" value="{{$user->email}}" readonly>
+                </div>
+                <div class="form-group">
+                   <a href="editUser/{{$user->id}}"><button type="submit" class="btn btn-success">Edit</button></a>
+                   <a href="cetakKartu/{{$user->id}}"><button type="submit" class="btn btn-dark">Cetak Kartu</button></a>
+                </div>
             </div>
-
+        </div>
         <div class="col-md-1">
         </div>
       <div class="col-md-6" style="padding:20px;">
@@ -47,7 +56,6 @@
             </a>
             </div>
        </div>        
-
-        </div>
+      </div>
     </div>
 @endsection
