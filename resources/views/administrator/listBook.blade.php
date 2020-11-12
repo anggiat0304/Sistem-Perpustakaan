@@ -22,7 +22,8 @@
                 <h1 class="te">Daftar Peminjaman </h1>            
             </a>
             </div>
-<a href="addBook" class="item"><img src="/images/plus.png" width="100"></a>
+<a href="addBook"><img src="/images/plus.png" class="item " width="100"></a>
+
 <table class="w3-table w3-striped w3-bordered w3-hoverable tab" >
 <thead style="background:">
 <tr>

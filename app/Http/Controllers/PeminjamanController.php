@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\peminjaman;
-use App\pengguna;
+use App\user;
+use App\book;
 
 
 class PeminjamanController extends Controller
@@ -16,9 +17,20 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
-        $user = pengguna::get();
         
-        return view('administrator/listPeminjaman',compact('user'));
+        $user = user::all();
+        //     $array_book = [];
+        //     foreach ($user as $pengguna) {
+        //         foreach ($pengguna->buku as $key ) {
+        //         $array_book[]= $key->judul_buku;
+        //             dd($array_book);
+
+        //         }
+                
+        //     }
+            
+         
+        return view('administrator.listPeminjaman',compact('user'));
     }
 
     /**

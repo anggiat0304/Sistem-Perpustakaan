@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','PagesController@index');
-Route::get('/cek/{keyword}','LoginController@cek');
 Route::get('/login/{keyword}','LoginController@login');
 
 Route::post('/login/administrator/addBookProccess','BooksController@store');
@@ -30,11 +29,12 @@ Route::post('/login/administrator/updateBookProccess/{book}','BooksController@up
 
 
 Route::get('/login/administrator/user','UserController@index');
- n/R/oute::get('/login/administrator/addUser','UserController@create');
-Route::ge6t('/login/administrator/deleteUser/{user}','UserController@destroy');
+Route::get('/login/administrator/addUser','UserController@create');
+Route::get('/login/administrator/deleteUser/{user}','UserController@destroy');
 Route::get('/login/administrator/detailUser/{user}','UserController@show');
 Route::get('/login/administrator/detailUser/editUser/{user}','UserController@edit');
 Route::post('/login/administrator/updateUserProccess/{user}','UserController@update');
 
 Route::post('/login/administrator/addUserProccess','UserController@store');
 
+Route::get('/login/administrator/pengembalian','PengembalianController@index');

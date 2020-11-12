@@ -20,6 +20,7 @@ class CreateUserTable extends Migration
             $table->string('nama');
             $table->string('posisi');
             $table->string('email');
+            $table->rememberToken();    
             $table->unsignedInteger('role_id');
             $table->foreign('role_id')->references('id')->on('role');
             $table->timestamps();

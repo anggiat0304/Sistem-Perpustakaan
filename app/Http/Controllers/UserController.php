@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\pengguna;
+use App\user;
 
 class UserController extends Controller
 {
@@ -15,7 +15,8 @@ class UserController extends Controller
     public function index()
     {
         
-        $user = pengguna::all();
+        $user = user::all();
+        // return response()->json($user);
         return view('administrator/user',compact('user'));
     }
 
@@ -40,7 +41,7 @@ class UserController extends Controller
     {
         //
         if ($request->status!="admin") {
-            $user = new pengguna;
+            $user = new user;
         $user->tag_id = $request->tag_id;
         $user->nama = $request->nama;
         $user->no_id = $request->NIM;
@@ -52,7 +53,7 @@ class UserController extends Controller
         elseif ($request->status == "admin")
         {
             #
-            $user = new pengguna;
+            $user = new user;
         $user->tag_id = $request->tag_id;
         $user->nama = $request->nama;
         $user->no_id = $request->NIM;
@@ -74,7 +75,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user = pengguna::all()->find($id);
+        $user = user::all()->find($id);
         return view('administrator.detailUser',compact('user'));
     }
 
@@ -87,7 +88,7 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $user = pengguna::all()->find($id);
+        $user = user::all()->find($id);
         return view('administrator\editUser',compact('user'));
     }
 
@@ -102,7 +103,7 @@ class UserController extends Controller
     {
         //
     if (!strpos($request->status,'user')) {
-        pengguna::where('id',$id)->update([
+        user::where('id',$id)->update([
             'tag_id' => $request->tag_id,
             'nama'=>$request->nama,
             'no_id'=> $request->no_id,
@@ -112,7 +113,7 @@ class UserController extends Controller
                 ]);
             }
     elseif(strpos($request->status,'user')) {
-        pengguna::where('id',$id)->update([
+        user::where('id',$id)->update([
             'tag_id' => $request->tag_id,
             'nama'=>$request->nama,
             'no_id'=> $request->no_id,
@@ -133,7 +134,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-        $user= pengguna::find($id);
+        $user= user::find($id);
         $user->delete();
         return redirect()->back();
     }
